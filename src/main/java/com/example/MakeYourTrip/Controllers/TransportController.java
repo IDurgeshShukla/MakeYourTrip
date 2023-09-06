@@ -4,7 +4,6 @@ import com.example.MakeYourTrip.RequestDtos.AddTransportDto;
 import com.example.MakeYourTrip.RequestDtos.SearchFlightDto;
 import com.example.MakeYourTrip.ResponseDto.FlightResultDto;
 import com.example.MakeYourTrip.Services.TransportService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@Slf4j
+
 @RequestMapping("/transport")
 public class TransportController {
     @Autowired
@@ -38,4 +37,17 @@ public class TransportController {
             return new ResponseEntity<>( new ArrayList<>(), HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("find-cheapest-transportId-with-given-fromCity-toCity")
+    public ResponseEntity<Integer> findTransportIdOfCheapestFlight(@RequestParam ("fromCity") String fromCity,
+                                                                   @RequestParam ("toCity")
+                                                                   String toCity){
+        try{
+            int ans = transportService.findCheapestTransportIdWithGivenAttributes(fromCity,toCity);
+            return new ResponseEntity<>(ans,HttpStatus.FOUND);
+        } catch (Exception e){
+            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 }

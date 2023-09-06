@@ -9,13 +9,13 @@ import java.util.Date;
 import java.util.List;
 
 import com.example.MakeYourTrip.Enums.City;
-@Entity
-@Table(name = "routes")
 @Getter
 @Setter
-@NoArgsConstructor
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "routes")
 public class Routes {
 
     @Id

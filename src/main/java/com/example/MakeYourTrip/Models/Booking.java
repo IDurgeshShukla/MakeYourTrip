@@ -1,15 +1,13 @@
 package com.example.MakeYourTrip.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Date;
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -19,7 +17,7 @@ public class Booking {
     @Id
     private Integer bookingId;
 
-    private Date journeyDate;
+    private LocalDate journeyDate;
     private String seatNos; // comma seperated value
     private Integer transportId;
     @ManyToOne

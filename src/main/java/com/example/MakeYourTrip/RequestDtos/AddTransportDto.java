@@ -3,14 +3,12 @@ package com.example.MakeYourTrip.RequestDtos;
 import com.example.MakeYourTrip.Enums.ModeOfTransport;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 @AllArgsConstructor
+@Builder
 @NoArgsConstructor
 @Getter
 @Setter

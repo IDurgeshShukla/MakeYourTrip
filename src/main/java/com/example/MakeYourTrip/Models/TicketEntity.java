@@ -5,7 +5,10 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "Tickets")
 public class TicketEntity {

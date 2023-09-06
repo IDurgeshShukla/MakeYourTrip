@@ -14,4 +14,7 @@ public class AddRouteDto {
     private City toCity;
     @Enumerated(value = EnumType.STRING)
     private ModeOfTransport modeOfTransport;
+
+    private String StopsInBetween;
+
 }

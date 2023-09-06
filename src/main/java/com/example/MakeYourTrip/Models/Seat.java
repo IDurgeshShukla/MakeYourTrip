@@ -6,6 +6,7 @@ import lombok.*;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -18,7 +19,7 @@ public class Seat {
     @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
     private Integer price;
-
+    private Boolean isBooked = false;
     @ManyToOne
     @JoinColumn
     private Transport transport;

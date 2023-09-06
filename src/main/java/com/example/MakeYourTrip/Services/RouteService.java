@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RouteService {
     @Autowired
-    RouteRepository routeRepository;
+    private RouteRepository routeRepository;
     public String addRoute(AddRouteDto addrouteDto){
         Routes routes =
                 Routes.builder().fromCity(addrouteDto.getFromCity()).toCity(addrouteDto.getToCity()).modeOfTransport(addrouteDto.getModeOfTransport()).build();
